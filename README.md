@@ -6,21 +6,21 @@
 
 原 Excel 工作簿《第三章 动态图表.xlsm》通过 **表单控件、INDEX/VLOOKUP 公式、数据透视表切片器、VBA 宏** 实现图表动态交互。本项目用 Python 完整复现全部 7 个案例：
 
-| # | 案例 | Excel 动态机制 | Python 实现 | 输出 |
-|---|---|---|---|---|
-| 1 | 动态柱形图 | 控件单元格 + INDEX/VLOOKUP 取数 | `Bar + Timeline` | [HTML](output/案例1_动态柱形图.html) |
-| 2 | 动态跑道图 | 圆环图 + 占位（总人数/2−数值） | 多环嵌套 `Pie + Timeline` | [HTML](output/案例2_动态跑道图.html) |
-| 3 | 动态南丁格尔圆环图 | 控件输入切换统计周期 | `Pie(rosetype="radius") + Timeline` | [HTML](output/案例3_动态南丁格尔圆环图.html) |
-| 4 | 动态组合图 | 复选框 + IF 控制系列显隐 | `Bar + Line` 双轴 + 图例开关 | [HTML](output/案例4_动态组合图.html) |
-| 5 | 数据透视表 + 切片器 | 透视表按学历统计平均月收入 | `pandas.pivot_table + Tab` | [HTML](output/案例5_透视表切片器.html) |
-| 6 | VBA 动态玉玦图 | VBA 宏按钮切换周期 | 多环 `Pie + Tab`（选项卡替代宏按钮） | [HTML](output/案例6_VBA动态玉玦图.html) |
-| 7 | 动态滑珠图 | 组合框 + 选项按钮 + 辅助列 | 堆积 `Bar + EffectScatter + Timeline` | [HTML](output/案例7_动态滑珠图.html) |
-| ★ | 综合数据大屏 | —— | `Page` 可拖拽布局整合全部案例 | [HTML](output/数据大屏.html) |
+| # | 案例 | Excel 动态机制 | Python 实现 |
+|---|---|---|---|
+| 1 | 动态柱形图 | 控件单元格 + INDEX/VLOOKUP 取数 | `Bar + Timeline` |
+| 2 | 动态跑道图 | 圆环图 + 占位（总人数/2−数值） | 多环嵌套 `Pie + Timeline` |
+| 3 | 动态南丁格尔圆环图 | 控件输入切换统计周期 | `Pie(rosetype="radius") + Timeline` |
+| 4 | 动态组合图 | 复选框 + IF 控制系列显隐 | `Bar + Line` 双轴 + 图例开关 |
+| 5 | 数据透视表 + 切片器 | 透视表按学历统计平均月收入 | `pandas.pivot_table + Tab` |
+| 6 | VBA 动态玉玦图 | VBA 宏按钮切换周期 | 多环 `Pie + Tab`（选项卡替代宏按钮） |
+| 7 | 动态滑珠图 | 组合框 + 选项按钮 + 辅助列 | 堆积 `Bar + EffectScatter + Timeline` |
+| ★ | 综合数据大屏 | —— | `Page` 可拖拽布局整合全部案例 |
 
 ## 在线预览
 
-- **Notebook 完整运行效果（推荐）**：[在 nbviewer 中查看](https://nbviewer.org/github/sheelor/excel-dynamic-charts-python/blob/main/第三章_动态图表_Python实现.ipynb) —— 交互式图表可直接操作
-- `output/` 目录下的 8 个 HTML 文件下载后双击即可在浏览器中交互查看
+- **Notebook 源码与讲解**：[在 nbviewer 中查看](https://nbviewer.org/github/sheelor/excel-dynamic-charts-python/blob/main/第三章_动态图表_Python实现.ipynb)
+- 运行 Notebook 后会在 `output/` 生成 8 个交互式 HTML（7 个案例 + 数据大屏），浏览器打开即可交互操作
 
 ## 效果预览（截图位于 docs/images/）
 
@@ -44,12 +44,14 @@
 │   ├── 案例5_人力资源明细.csv        # 1470 条员工明细
 │   ├── 案例6_玉玦图流量来源.csv
 │   └── 案例7_区域月度完成率.csv
-├── output/                          # 运行后生成的交互式 HTML 图表
+├── output/                          # 运行 Notebook 后生成的交互式 HTML 图表（未入库）
 ├── docs/
-│   ├── images/                      # 图表截图（README/报告用）
-│   └── 实验报告.docx                 # 课程实验报告
+│   ├── images/                      # 图表截图（README/报告用，未入库）
+│   └── 实验报告.docx                 # 课程实验报告（未入库）
 └── requirements.txt
 ```
+
+> `output/` 与 `docs/` 为运行产物与二进制附件，可通过仓库网页端「Add file → Upload files」拖入对应文件夹补充上传。
 
 ## 快速开始
 
