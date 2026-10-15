@@ -22,20 +22,28 @@ git remote add gitee https://gitee.com/<你的用户名>/excel-dynamic-charts-py
 git push gitee main
 ```
 
-## 补充上传二进制附件（GitHub / Gitee 均适用）
+## 关于图片截图
 
-以下文件为运行产物或二进制文件，未包含在 git 提交中，可在仓库网页端手动补充：
+README 引用的图表截图位于 `images/` 目录，由仓库自带的
+`.github/workflows/render.yml` 在每次推送后**自动运行 `run_all.py` 生成并提交**，
+无需手动上传。若想在本地生成，执行：
 
-- `docs/images/` 下的 8 张图表截图（README 中的预览图引用它们）
-- `docs/实验报告.docx`（课程实验报告）
-- `output/` 下的 8 个交互式 HTML（运行 Notebook 后可重新生成）
+```bash
+pip install playwright && playwright install chromium
+python run_all.py
+```
 
-操作路径：仓库主页 →「Add file / 上传文件」→ 将上述文件拖入对应目录 → 提交。
-上传后 README 中的截图预览即可正常显示。
+> 如果暂不配置 CI，也可以直接把本地 `images/` 下的 8 张 PNG
+> 通过网页端「Add file → Upload files」上传到仓库。
+
+## 可选：补充上传实验报告
+
+`docs/实验报告.docx` 为课程实验报告（Word 二进制文件，未包含在 git 提交中）。
+如需随仓库公开，可在仓库网页端「Add file / 上传文件」拖入 `docs/` 目录。
 
 ## 开源检查清单
 
 - [ ] 仓库设为公开（Public / 开源）
 - [ ] LICENSE（MIT）已随仓库导入
-- [ ] README 首页正常渲染（截图上传后图片可见）
-- [ ] Notebook 可在仓库内直接预览源码
+- [ ] README 首页正常渲染（推送后等待 CI 完成，截图即可见）
+- [ ] Notebook 与 `第三章动态图表复现-全部代码汇总.md` 可在线预览
